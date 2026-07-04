@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Dashboard</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="student.html">Student Login</a>
+            <a href="register.html">Register</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="container">
+            <h1>Student Dashboard</h1>
+
+            <h2>Welcome Students</h2>
+
+            <p><b>Name:</b> <span id="student-name"></span></p>
+            <p><b>Course:</b> <span id="student-course"></span></p>
+            <p><b>Academic score:</b> <span id="student-score"></span></p>
+            <p><b>Skills:</b> <span id="student-skills"></span></p>
+
+            <h2>Available Companies</h2>
+            <table border="1" align="center">
+
+                <tr>
+                    <th>Company</th>
+                    <th>Package</th>
+                    <th>Eligibility</th>
+                    <th>Location</th>
+                </tr>
+
+                <tr>
+                    <td>TCS</td>
+                    <td>3.7 LPA</td>
+                    <td>50%</td>
+                    <td>Noida</td>
+                    <td>
+                        <a href="apply_job.html">
+                            <button>Apply Now</button>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Infosys</td>
+                    <td>5 LPA</td>
+                    <td>55%</td>
+                    <td>Bangalore</td>
+                    <td>
+                        <a href="apply_job.html">
+                            <button>Apply Now</button>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Wipro</td>
+                    <td>9 LPA</td>
+                    <td>65%</td>
+                    <td>Hyderabad</td>
+                    <td>
+                        <a href="apply_job.html">
+                            <button>Apply Now</button>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>15 LPA</td>
+                    <td>75%</td>
+                    <td>California</td>
+                    <td>
+                        <a href="apply_job.html">
+                            <button>Apply Now</button>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Microsoft</td>
+                    <td>12 LPA</td>
+                    <td>70%</td>
+                    <td>Washington</td>
+                    <td>
+                        <a href="apply_job.html">
+                            <button>Apply Now</button>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tech Mahindra</td>
+                    <td>8 LPA</td>
+                    <td>60%</td>
+                    <td>Pune</td>
+                    <td>
+                        <a href="apply_job.html">
+                            <button>Apply Now</button>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HCL</td>
+                    <td>10 LPA</td>
+                    <td>65%</td>
+                    <td>Noida</td>
+                    <td>
+                        <a href="apply_job.html">
+                            <button>Apply Now</button>
+                        </a>
+                    </td>
+                </tr>
+            </table><br>
+            <a href="profile.html">
+                <button>My Profile</button>
+            </a>
+        </div>
+        
+        <script>
+        
+        const params = new URLSearchParams(window.location.search);
+        
+        const email = params.get("email");
+        
+        fetch("http://localhost:3000/student?email=" + email)
+        
+        .then(response => response.json())
+        
+        .then(student => {
+            
+            document.getElementById("name").innerText = student.name; 
+            document.getElementById("email").innerText = student.email;
+            document.getElementById("mobile").innerText = student.mobile;
+            document.getElementById("course").innerText = student.course;
+            document.getElementById("skills").innerText = student.skills;
+            document.getElementById("academic_type").innerText = student.academic_type;
+            document.getElementById("academic_score").innerText = student.academic_score;
+        });
+        </script>
+
+        <footer>
+            <p>&copy 2026 Campus Placement Portal.</p>
+            <p>Email: placement@brabu.edu.in</p>
+            <p>Phone: +91 0000000000</p>
+        </footer>
+    </body>
+    </html>

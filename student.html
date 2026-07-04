@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Login</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="student.html">Student Login</a>
+            <a href="register.html">Register</a>
+            <a href="admin.html">Admin login</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="container">
+            <h2>Student Login</h2>
+            <form action="http://localhost:3000/login" method="POST" onsubmit="return loginCheck()">
+                Email:
+                <input type="email" id="email" name="email" placeholder="Enter email" required><br><br>
+
+                Password:
+                <input type="password" id="password" name="password" placeholder="Enter password" required><br><br>
+
+                <button>login</button>
+            </form><br><br>
+            
+            <script>
+            
+            function loginCheck()
+            {
+                let email = document.getElementById("email").value;
+                let pass = document.getElementById("password").value;
+                
+                if(email=="")
+                {
+                    alert("Enter Email");
+                    return false;
+                }
+                
+                if(pass=="")
+                {
+                    alert("Enter Password");
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            </script><br><br>
+            
+            New student? <a href="register.html">Register here</a>
+        </div>
+        <footer>
+            <p>&copy 2026 Campus Placement Portal.</p>
+            <p>Email: placement@brabu.edu.in</p>
+            <p>Phone: +91 0000000000</p>
+        </footer>
+    </body>
+</html>

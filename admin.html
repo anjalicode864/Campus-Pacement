@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Login</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="student.html">Student Login</a>
+            <a href="register.html">Register</a>
+            <a href="admin.html">Admin Login</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="container">
+            <h2>Admin Login</h2>
+            <form action="a_dashboard.html" onsubmit="return adminCheck()">
+                Admin Username:
+                <input type="text" id="adminUsername" placeholder="Enter name" required><br><br>
+                Password:
+                <input type="password" id="adminPassword" placeholder="Enter password" required><br><br>
+                <button>Login</button>
+            </form>
+            
+            <script>
+            
+            function adminCheck()
+            {
+                let user = document.getElementById("adminUsername").value;
+                let pass = document.getElementById("adminPassword").value;
+                
+                if(user=="")
+                {
+                    alert("Enter Username");
+                    return false;
+                }
+                
+                if(pass=="")
+                {
+                    alert("Enter Password");
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            </script>
+        </div>
+        <footer>
+            <p>&copy 2026 Campus Placement Portal.</p>
+            <p>Email: placement@brabu.edu.in</p>
+            <p>Phone: +91 0000000000</p>
+        </footer>
+    </body>
+</html>

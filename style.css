@@ -1,0 +1,143 @@
+body{
+    font-family: Arial;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.container{
+    width: 450px;
+    background-color: white;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input, select{
+    width: 250px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+button{
+    width: 120px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: darkblue;
+}
+
+h1{
+    color: blue;
+}
+
+h2{
+    color: green;
+}
+nav {
+    background-color: blue;
+    padding: 15px;
+    text-align: center; /* Menu items ko center me karne ke liye */
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* Underline hatane ke liye */
+    margin: 0 20px;       /* Buttons ke beech space dene ke liye */
+    font-size: 18px;
+    font-family: Arial,;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffcc00; /* Jab mouse link par jaye to color change ho */
+}
+/* Contact Page Styling */
+.contact-info {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 400px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 2; /* Lines ke beech thoda space dene ke liye */
+}
+
+.placement statistics section{
+    background-color:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+    text-align:center;
+}
+.recruiters ul{
+    list-style: none;
+    padding: 0;
+}
+.success-container{
+    width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.success-container h1{
+    color: green;
+    margin-bottom: 20px;
+}
+
+.success-container p{
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.success-container button{
+    background: blue;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 150px;
+}
+@media (max-width:768px)
+{
+
+.container
+{
+    width:95%;
+}
+
+table
+{
+    width:100%;
+}
+
+input
+{
+    width:100%;
+}
+
+select
+{
+    width:100%;
+}
+
+textarea
+{
+    width:100%;
+}
+
+button
+{
+    width:100%;
+}
+
+}

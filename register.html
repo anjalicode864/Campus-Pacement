@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Registration</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="student.html">Student Login</a>
+            <a href="register.html">Register</a>
+            <a href="admin.html">Admin login</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="container">
+            <h1>Campus Placement Portal</h1>
+            <h2>Student Registration Form</h2>
+            <form action="http://localhost:3000/register" method="POST" onsubmit="return validateForm()">
+                Name:
+                <input type="text" pattern="[A-Za-z ]+"  id="name"  name="name" placeholder="Enter your name" required><br><br>
+                
+                Date of Birth:
+                <input type="date" id="dob" name="dob" required><br><br>
+                
+                Gender:
+                <select id="gender" name="gender" required>
+                    <option value="select gender">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
+                
+                Mob No.:
+                <input type="number" pattern="[0-9]{10}" id="mobile" name="mobile" placeholder="10-digit mobile number" required><br><br>
+                
+                Email:
+                <input type="email" id="email" name="email" placeholder="Enter email" required><br><br>
+                
+                Password:
+                <input type="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}" id="password" name="password" placeholder="Must contain at least 8 characters" required><br><br>
+                Confirm Password:
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required><br><br>
+                <small>
+                    Password must contain:
+                    1 uppercase, 1 lowercase, 1 number, 1 special character and minimum 8 characters.
+                </small><br><br>
+                Course:
+                <select id="course" name="course" required>
+                    <option value="Select course">select course</option>
+                    <option value="BCA 1st">BCA 1st Sem</option>
+                    <option value="BCA 2nd">BCA 2nd Sem</option>
+                    <option value="BCA 3rd">BCA 3rd Sem</option>
+                    <option value="BCA 4th">BCA 4th Sem</option>
+                    <option value="BCA 5th">BCA 5th Sem</option>
+                    <option value="BCA 6th">BCA 6th Sem</option>
+                </select><br><br>
+                Academic type:
+                <select id="academic_type" name="academic_type" required>
+                    <option value="Select academic type">Select academic type</option>
+                    <option value="Percentage">Percentage</option>
+                    <option value="CGPA">CGPA</option>
+                </select><br><br>
+                <p>For percentage: 0-100 | For CGPA: 0-10</p>
+                Academic score:
+                <input type="number" min="0" max="100" step="0.01" id="academic_score" name="academic_score" placeholder="Select percentage or CGPA first" required><br><br>
+
+                Skills:
+                <select id="skills" name="skills" required>
+                    <option value="Select skill">Select a skill</option>
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                </select><br><br>
+                
+                Photo:
+                <input type="file" id="photo" required><br><br>
+                Resume:
+                <input type="file" id="resume" required><br><br>
+                
+                <button>Register</button>
+            </form>
+        </div>
+        
+        <script>
+        function validateForm()
+        {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            
+            if(name=="")
+            {
+                alert("Please Enter Name");
+                return false;
+            }
+                
+            if(email=="")
+            {
+                alert("Please Enter Email");
+                return false;
+            }
+                
+            if(password=="")
+            {
+                alert("Please Enter Password");
+                return false;
+            }
+            if(password!=confirmPassword)
+            {
+                alert("Password and Confirm Password must be same");
+                return false;
+            }
+            
+            return true;
+        }
+        
+        </script>
+        <footer>
+            <p>&copy 2026 Campus Placement Portal.</p>
+            <p>Email: placement@brabu.edu.in</p>
+            <p>Phone: +91 0000000000</p>
+        </footer>        
+    </body>
+</html>
